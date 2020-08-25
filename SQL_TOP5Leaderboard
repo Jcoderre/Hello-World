@@ -1,0 +1,75 @@
+/* TOP 5 Leaderboard */
+
+CREATE TABLE Leaderboard (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER,
+    nickname TEXT,
+    score INTEGER
+    );
+
+INSERT INTO Leaderboard (user_id, nickname, score) 
+    VALUES (1, "littlemario", 987852);
+    
+INSERT INTO Leaderboard (user_id, nickname, score) 
+    VALUES (1, "littlemario", 922433);
+
+INSERT INTO Leaderboard (user_id, nickname, score) 
+    VALUES (2, "girlzOnly", 903899);
+
+INSERT INTO Leaderboard (user_id, nickname, score) 
+    VALUES (3, "perzival", 850759);
+
+INSERT INTO Leaderboard (user_id, nickname, score) 
+    VALUES (2, "girlzOnly", 835845);
+
+    /*Show Leaderboard*/
+SELECT * FROM Leaderboard;
+
+    /*Update id 1*/
+UPDATE Leaderboard SET user_id = 3
+    WHERE id = 1;
+UPDATE Leaderboard SET nickname = "perzival"
+    WHERE id = 1;
+UPDATE Leaderboard SET score = 999875
+    WHERE id = 1;
+    /*Update id 2*/
+UPDATE Leaderboard SET user_id = 1
+    WHERE id = 2;
+UPDATE Leaderboard SET nickname = "littlemario"
+    WHERE id = 2;
+UPDATE Leaderboard SET score = 987852
+    WHERE id = 2;
+    /*Update id 3*/
+UPDATE Leaderboard SET user_id = 1
+    WHERE id = 3;
+UPDATE Leaderboard SET nickname = "littlemario"
+    WHERE id = 3;
+UPDATE Leaderboard SET score = 922433
+    WHERE id = 3;
+    /*Update id 4*/
+UPDATE Leaderboard SET user_id = 2
+    WHERE id = 4;
+UPDATE Leaderboard SET nickname = "girlzOnly"
+    WHERE id = 4;
+UPDATE Leaderboard SET score = 903899
+    WHERE id = 4;
+    /*Upadte id 5*/
+UPDATE Leaderboard SET user_id = 3
+    WHERE id = 5;
+UPDATE Leaderboard SET nickname = "perzival"
+    WHERE id = 5;
+UPDATE Leaderboard SET score = 850759
+    WHERE id = 5;
+
+    /*Show new TOP 5*/
+SELECT * FROM Leaderboard;
+
+    /*From now only show Leaderboard TOP 3*/
+DELETE FROM Leaderboard
+    WHERE id = 5;
+DELETE FROM Leaderboard
+    WHERE id = 4;
+    
+SELECT * FROM Leaderboard;
+    
+
